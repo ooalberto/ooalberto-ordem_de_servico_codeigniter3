@@ -4,10 +4,6 @@
 
 # Editor.md
 
-![](https://i.imgur.com/fvYELLQ.jpg)
-![](https://i.imgur.com/VDpJOB4.png)
-
-
 - Modulo vendas (Criação, Edição e Deleção):
       Venda de produtos com geração de PDF para impressão
       Ordem de serviços com geração de PDF para impressão
@@ -44,3 +40,7 @@
       * CNPJ
       * E-mail
       * Enderço e outros.
+
+![](https://i.imgur.com/fvYELLQ.jpg)
+
+![](https://i.imgur.com/VDpJOB4.png)
