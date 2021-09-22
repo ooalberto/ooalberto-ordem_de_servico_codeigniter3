@@ -1,5 +1,5 @@
 ### Features
-
+- Código não finalizado, quando terminar colocarei aqui como concluído.
 - Criando um sistema web com Codeigniter 3, para geração de ordens de serviços, vendas de produto usando o Codeigniter 3.
 
 # Editor.md
@@ -40,7 +40,5 @@
       * CNPJ
       * E-mail
       * Enderço e outros.
-
-![](https://i.imgur.com/fvYELLQ.jpg)
 
 ![](https://i.imgur.com/VDpJOB4.png)
