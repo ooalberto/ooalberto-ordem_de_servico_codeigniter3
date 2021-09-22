@@ -1,6 +1,6 @@
 ### Features
 - Código não finalizado, quando terminar colocarei aqui como concluído.
-- Sistem de Ordem de Serviço para geração de ordens de serviços, vendas de produto usando o Codeigniter 3.
+- Sistema de Ordem de Serviço com módulo de vendas de produtos usando o Codeigniter 3.
 
 # Editor.md
 
