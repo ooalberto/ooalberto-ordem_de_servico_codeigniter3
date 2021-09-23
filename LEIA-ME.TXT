@@ -1,0 +1,23 @@
+1- criar pasta '/public' na raiz
+2- mover index e colocar o comando  	chdir(dirname(__DIR__));
+3 - htaccess
+	# ATENÇÃO: Renomem o arquivo para '.htaccess'
+	RewriteEngine on
+	RewriteCond $1 !^(index\.php|resources|robots\.txt)
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+4- application\config\autoload.php
+ativar o url_base no load: autoload['helper'] = array('url');
+a)usar base_url('link')
+
+5- remover index.php (para n mostrar na extecao da url
+$config['index_page'] = '';
+
+6- fatiar as views
+ a) criar view/layout/header.php (colar de  <div id="wrapper"> pra cima do index
+ b) sidebar dentro de view/layout/sidebar.php por dentro  Content Wrapper tbm
+
+
+
