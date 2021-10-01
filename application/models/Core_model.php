@@ -4,34 +4,34 @@ defined('BASEPATH') or exit('Ação não permitida');
 
 class Core_model extends CI_Model
 {
-    public function get_all($tabela = NULL, $condicao = NULL)
+    public function get_all($strTabela = NULL, $arrCondicao = NULL)
     {
-        if ($tabela) {
-            if (is_array($condicao)) {
-                $this->db->where($condicao);
+        if ($strTabela) {
+            if (is_array($arrCondicao)) {
+                $this->db->where($arrCondicao);
             }
-            return $this->db->get($tabela)->result();
+            return $this->db->get($strTabela)->result();
         } else {
             return FALSE;
         }
     }
 
 
-    public function get_by_id($tabela = null, $condicao = null)
+    public function get_by_id($strTabela = null, $arrCondicao = null)
     {
-        if ($tabela && is_array($condicao)) {
-            $this->db->where($condicao);
+        if ($strTabela && is_array($arrCondicao)) {
+            $this->db->where($arrCondicao);
             $this->db->limit(1);
 
-            return $this->db->get($tabela)->row();
+            return $this->db->get($strTabela)->row();
         }
     }
 
-    public function insert($tabela = null, $data = null, $get_last_id = null)
+    public function insert($strTabela = null, $strData = null, $intGetLastId = null)
     {
-        if ($tabela &&  is_array($data)) {
-            $this->db->insert($tabela, $data);
-            if ($get_last_id) {
+        if ($strTabela &&  is_array($strData)) {
+            $this->db->insert($strTabela, $strData);
+            if ($intGetLastId) {
                 $this->session->set_userdata('last_id', $this->db->insert_id());
             }
 
@@ -43,10 +43,10 @@ class Core_model extends CI_Model
         }
     }
 
-    public function update($tabela = null, $data = null, $condicao = null)
+    public function update($strTabela = null, $strData = null, $arrCondicao = null)
     {
-        if ($tabela && is_array($data) && is_array($condicao)) {
-            if ($this->db->update($tabela, $data, $condicao)) {
+        if ($strTabela && is_array($strData) && is_array($arrCondicao)) {
+            if ($this->db->update($strTabela, $strData, $arrCondicao)) {
                 $this->sesson->set_flashdata('sucesso', 'Dados salvos com sucesso!');
             } else {
                 $this->session->set_flashdata('error', 'Erro ao atualizar os dados');
@@ -56,16 +56,16 @@ class Core_model extends CI_Model
         }
     }
 
-    public function delete($tabela  = null, $condicao = null)
+    public function delete($strTabela  = null, $arrCondicao = null)
     {
         $this->db->db_debug =  FALSE;
 
-        if ($tabela && is_array($condicao)) {
-            $status = $this->db->delete($tabela, $condicao);
-            $error = $this->db->error();
-            if (!$status) {
-                foreach ($error as $code) {
-                    if ($code == 1451) {
+        if ($strTabela && is_array($arrCondicao)) {
+            $intStatus = $this->db->delete($strTabela, $arrCondicao);
+            $arrError = $this->db->error();
+            if (!$intStatus) {
+                foreach ($arrError as $intCode) {
+                    if ($intCode == 1451) {
                         $this->session->set_flashdata('error', 'Esse registro não pode ser usado, pois esta sendo usado em outra tabela.');
                     }
                 }
