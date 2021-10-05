@@ -5,50 +5,55 @@
   <?php $this->load->view('layout/navbar'); ?>
 
   <!-- Begin Page Content -->
-  <div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="<?php echo base_url('/');?>">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><?=$strTitulo;?></li>
+    </ol>
+  </nav>
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
 
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-      <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead>
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <a href="" title="Cadastrar novo Usuário" class="btn btn-success float-right "><i class="fas fa-user-plus"></i>&nbsp;Novo</a>
+      <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0">
+
+        
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Usuário</th>
+              <th>login</th>
+              <th>Ativo</th>
+              <th class="text-right no-sort">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($objUsuarios as $strUser) : ?>
               <tr>
-                <th>#</th>
-                <th>Usuário</th>
-                <th>login</th>
-                <th>Ativo</th>
-                <th>Ações</th>
+                <td><?php echo $strUser->id ?></td>
+                <td><?php echo $strUser->username ?></td>
+                <td><?php echo $strUser->email ?></td>
+                <td><?php echo $strUser->active ?></td>
+                <td class="text-right">
+                  <a  title="editar" href="" class="btn btn-sm btn-primary"><i class="fas fa-user-edit"></i></a>
+                  <a title="excluir" href="" class="btn btn-sm btn-danger"><i class="fas fa-user-times"></i></a>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($objUsuarios as $strUser) : ?>
-                <tr>
-                  <td><?php echo $strUser->id ?></td>
-                  <td><?php echo $strUser->username ?></td>
-                  <td><?php echo $strUser->email ?></td>
-                  <td><?php echo $strUser->active ?></td>
-                  <td>
-                    <a title="editar" href="" class="btn btn-sm btn-primary">Editar</a>
-                    <a title="excluir" href="" class="btn btn-sm btn-danger">excluir</a>
-                  </td>
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
-        </div>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
       </div>
     </div>
-
   </div>
-  <!-- /.container-fluid -->
+
+</div>
+<!-- /.container-fluid -->
 
 </div>
 <!-- End of Main Content -->

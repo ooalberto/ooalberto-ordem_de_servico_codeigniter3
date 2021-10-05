@@ -8,11 +8,17 @@
   <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Home</h1>
+    <h1 class="h3 mb-4 text-gray-800">Home</h1>php 
 
-  </div>
+  </div> 
   <!-- /.container-fluid -->
 
 </div>
 <!-- End of Main Content -->
 
+<script type="text/javascript">
+  function load(a,b){
+    result = a * b;
+    
+  }
+</script>
