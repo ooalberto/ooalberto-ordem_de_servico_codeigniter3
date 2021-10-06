@@ -9,14 +9,14 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title><?=isset($strTitulo)?'System Order: '.$strTitulo:'System Order';?></title>
+  <title><?= isset($strTitulo) ? 'System Order: ' . $strTitulo : 'System Order'; ?></title>
 
   <!-- Custom fonts for this template-->
   <link href="<?= base_url('vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
 
   <?php if (isset($arrStyles)) : ?>
     <?php foreach ($arrStyles as $strStyle) : ?>
-  <link href="<?= base_url( $strStyle) ?>" rel="stylesheet">
+      <link href="<?= base_url($strStyle) ?>" rel="stylesheet">
     <?php endforeach; ?>
   <?php endif ?>
 
@@ -28,10 +28,7 @@
 
 </head>
 
-
 <body id="page-top">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
-
-  

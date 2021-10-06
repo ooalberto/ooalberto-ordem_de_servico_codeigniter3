@@ -23,8 +23,8 @@
       <div class="table-responsive">
         <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0">
 
-        
-          <thead>
+            
+          <thead> 
             <tr>
               <th>#</th>
               <th>Usuário</th>

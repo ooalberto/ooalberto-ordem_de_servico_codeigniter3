@@ -49,11 +49,13 @@
   <script src="js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="js/demo/datatables-demo.js"></script>
+  <?php if (isset($arrScripts)) : ?>
+  <?php foreach ($arrScripts as $strScript) : ?>
+    <script src="<?=base_url(trim($strScript)); ?>"></script>
+  <?php endforeach; ?>
+<?php endif; ?>
+ <!-- Page level custom scripts -->
+  
 
 </body>
 
